@@ -44,3 +44,27 @@ The following pages are ones that I've visited:
 
 Here the issue that the poster mentioned having was simmilar to that of mine. However it 
  
+#### Later Discoveries (updated: 1/22/2021)
+    I figured out the issue, but haven't had the time to update this.
+    
+    I eventually found out that the service dhcpcd was where I was having my issues, as when I found out how to configure iwd to take on the DNS duties I no longer had
+    issues.
+    
+In my NetworkManager config file I configured it to stop randomizing my mac so much. 
+"""
+# This allows it to Randomize My MAC
+[device-mac-randomization]
+wifi.scan-rand-mac-address=yes
+
+# This forces it to stay at the most stable MAC
+[connection-mac-randomization]
+wifi.clone-mac-address=stable
+"""
+    
+    
+In my 
+"""
+# This allows iwd to take over DNS duties
+[General]
+EnableNetworkConfiguration=true
+"""
