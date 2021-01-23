@@ -4,11 +4,13 @@ This portion of the repo contains the information on the aggravating
 issues reguarding my installs tendency to have DNS troubles and
 connectivity issues.
 
-Issues:
+## Issues
+
     1) DNS 
-        * has issues with resolving domain names (ex: google.com) 
+        Has issues with resolving domain names (ex: google.com) 
+
     2) Connectivity
-        * has trouble with even connecting to outside servers
+        Has trouble with even connecting to outside servers
 
 
 ## Network Managers Installed
@@ -21,12 +23,11 @@ Issues:
     - dhcpcd
     - systemd-resolved 
 
-### Information Gathered
+## Information Gathered
+-----------------------
     
-When using systemctl and systemctl status to check the behaviors of dhcpcd and systemd-resolved i
-found that one of the possible problems is that my device is changing M.A.C and IP addresses about
-every 4-5 minutes.
-
+When using systemctl and systemctl status to check the behaviors of dhcpcd and systemd-resolved I found that one of the possible problems is that my device is changing M.A.C and IP addresses about every 4-5 minutes.   
+  
 I would ping (8.8.8.8) one of googles public dns servers to test if my connection was working,
 however when I did the following message was returned " ping: connect: Network is Unreachable".
 
@@ -36,35 +37,37 @@ The other issue with my os not being able to resolve the host name. This happene
 to ping a server using the domain name. When I tried originally the message "ping: google.com: Name
 or Service is not known" was returned.
 
-#### Research
+## Research
+-------------
 
 Using my phone, I decided to search about the issues on forums to see if I could find a solution.
 The following pages are ones that I've visited:
    -  https://bbs.archlinux.org/viewtopic.php?id=237074&p=7
 
-Here the issue that the poster mentioned having was simmilar to that of mine. However it 
- 
-#### Later Discoveries (updated: 1/22/2021)
-    I figured out the issue, but haven't had the time to update this.
-    
-    I eventually found out that the service dhcpcd was where I was having my issues, as when I found out how to configure iwd to take on the DNS duties I no longer had
-    issues.
-    
-In my NetworkManager config file I configured it to stop randomizing my mac so much. 
-"""
-# This allows it to Randomize My MAC
-[device-mac-randomization]
-wifi.scan-rand-mac-address=yes
+Here the issue that the poster mentioned having was simmilar to that of mine. However it   
 
-# This forces it to stay at the most stable MAC
-[connection-mac-randomization]
-wifi.clone-mac-address=stable
-"""
+## Later Discoveries (updated: 1/22/2021)
+-----------------------------------------
+
+I figured out the issue, but haven't had the time to update this.
+
+I eventually found out that the service dhcpcd was where I was having my issues, as when I found out how to configure iwd to take on the DNS duties I no longer had
+issues.
     
+In my NetworkManager config file I configured it to stop randomizing my mac so much.  
+
     
-In my 
-"""
-# This allows iwd to take over DNS duties
-[General]
-EnableNetworkConfiguration=true
-"""
+    #This allows it to Randomize My MAC  
+    [device-mac-randomization]  
+    wifi.scan-rand-mac-address=yes
+
+    #This forces it to stay at the most stable MAC  
+    [connection-mac-randomization]  
+    wifi.clone-mac-address=stable
+
+    
+After doing a bit of digging I found that this config file for **iwd** alowed it to take over DNS duties.    
+
+    # This allows iwd to take over DNS duties
+    [General]
+    EnableNetworkConfiguration=true
