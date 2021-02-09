@@ -20,7 +20,7 @@ This is an issue because without wpa_suppicant being the one holding the connect
 	
 ## Process:
 
-After some searching I found [this post](1) that details how to configure NetworkManager to use iwd as the wifi backend instead of wpa_supplicant.
+After some searching I found [this post][1] that details how to configure NetworkManager to use iwd as the wifi backend instead of wpa_supplicant.
 	
 The steps I had to take from here were:
 	1. Add this line of code into my NetworkManager.conf file.
@@ -36,6 +36,7 @@ wifi.backend=iwd
 ## Conclusion:
 
 After doing this I have yet to happen upon this issue again (although it has only been a few hours). 
+
 
 ### Packages used:
 	- [NetworkManager](https://wiki.archlinux.org/index.php/NetworkManager)
