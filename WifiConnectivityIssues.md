@@ -27,7 +27,7 @@ The steps I had to take from here were:
 
 1. Add this line of code into my NetworkManager.conf file.
 
-'''
+'''  
 [device]  
 wifi.backend=iwd  
 '''
