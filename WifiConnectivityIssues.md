@@ -1,9 +1,12 @@
 # Wi-Fi Connectivity Issues
 
-Related:
+## Related Posts:
+-----------------
+
 - [DNS Issues](DNS_Issues.md)
 
 ## Background:
+--------------
 
 After a while of using Arch I've encountered a few issues with DNS and Wireless Connectivity. The DNS Issue was solved after a while due to some competing daemon's. The Wireless Connectivity issues were small but were irritating to deal with after each reboot. 
 
@@ -12,6 +15,7 @@ I'm using Gnome as a Desktop Enviroment on my Arch install, and it comes with Ne
 
 
 ## Problem:
+-----------
 After each time I reboot my computer or it goes into standby, my computer loses connection to the wifi (I assume it's dropped to save power. After which iwd either starts off connected, or automatically connects due to the wireless interface being unused.
 	
 This is an issue because without wpa_suppicant being the one holding the connection all of the apps (aside from the terminal) cannot connect to the internet to preform the duties I need them for. This is aggravating since it requres me to spam "iwctl station wlan0 disconnect" while also making sure that I go to the wifi tab and select my wifi to connect to. While I can deal with this, it is still not a nice situation to be in.
@@ -19,30 +23,38 @@ This is an issue because without wpa_suppicant being the one holding the connect
 	
 	
 ## Process:
+-----------
 
-After some searching I found [this post][1] that details how to configure NetworkManager to use iwd as the wifi backend instead of wpa_supplicant.
+After some searching I found [this post][Post] that details how to configure NetworkManager to use iwd as the wifi backend instead of wpa_supplicant.
 	
 The steps I had to take from here were:
-	1. Add this line of code into my NetworkManager.conf file.
+
+1. Add this line of code into my NetworkManager.conf file.
+
+'''bash  
+[device]  
+wifi.backend=iwd  
 '''
 
-[device]
-wifi.backend=iwd
-
-'''
-	2. Stop and restart both NetworkManager and wpa_supplicant.
+2. Stop and restart both NetworkManager and wpa_supplicant.
 
 
-## Conclusion:
+## Conclusion
+--------------
 
 After doing this I have yet to happen upon this issue again (although it has only been a few hours). 
 
+-----
 
-### Packages used:
-	- [NetworkManager](https://wiki.archlinux.org/index.php/NetworkManager)
-	- [wpa_supplicant](https://wiki.archlinux.org/index.php/wpa_supplicant)
-	- [iwd](https://wiki.archlinux.org/index.php/Iwd)
+### Packages used:  
+
+- [NetworkManager](https://wiki.archlinux.org/index.php/NetworkManager)
+- [wpa_supplicant](https://wiki.archlinux.org/index.php/wpa_supplicant)
+- [iwd](https://wiki.archlinux.org/index.php/Iwd)
 
 
 ### Sources
-	- [1](https://wiki.debian.org/NetworkManager/iwd)
+
+- [Post on configuring NetworkManager][Post]  
+
+[Post]: (https://wiki.debian.org/NetworkManager/iwd)
