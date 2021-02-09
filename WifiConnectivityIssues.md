@@ -37,7 +37,7 @@ wifi.backend=iwd
 
 ## Conclusion
 
-After doing this I have yet to happen upon this issue again (although it has only been a few hours). 
+After doing this I have yet to happen upon this issue again (although it has only been a few hours). So I'd say that I fixed it, at least for now.
 
 -----
 
