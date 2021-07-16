@@ -1,12 +1,11 @@
 # Moving to a new 1 TB SSD
 
-## New SSD
 
-| | |
-|:-------:|---------------------------------|
-|Name     | SanDisk SDSSDA-1                |
-|Capacity | 1 TB                            |
-|Datasheet| [link to pdf][product datasheet]|
+| **New SSD** |                                 |
+|:-----------:|---------------------------------|
+|Name         | SanDisk SDSSDA-1                |
+|Capacity     | 1 TB                            |
+|Datasheet    | [link to pdf][product datasheet]|
 
 ## Partition Sheme
 
