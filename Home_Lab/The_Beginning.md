@@ -12,4 +12,4 @@ With my current employer going through remodeling and refitting our store they d
 
 
 [Dell Wyze]: Dell_Wyze.md
-[SonicWall Firewall]: sonicwall.md
+[SonicWall Firewall]: sonicwall_firewall.md
