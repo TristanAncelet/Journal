@@ -40,7 +40,7 @@ After creating a database and creating a few tables, I created a user and gave t
         var2 INT AUTOINCREMENT,
     );
 
-    CREATE USER 'user'@'ip address';IDENTIFIED BY Password('password');
+    CREATE USER 'user'@'ip address' IDENTIFIED BY Password('password');
 
     GRANT ALL PRIVILEGES ON 'test_database'.* TO 'user'@'ip address';
 
