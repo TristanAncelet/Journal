@@ -1,6 +1,6 @@
-# Recieved Thin Client
+# Dell Wyze
 
-With my current employer 
+![Dell Wyze](dell_wyze.jpg)
 
 ## Specs
 
@@ -16,8 +16,6 @@ With my current employer
 
 
 ### RAM
-
-**NOTE:** Specs were 
 
 | Spec         | Value       |
 |--------------|-------------|
@@ -37,4 +35,14 @@ With my current employer
 | Vendor       | AMD         |
 
 
+## Installing Ubuntu Server
+
+After many unsuccesful attempts at booting the [Ubuntu Server Iso][Ubuntu Server Iso Download] written to a flash drive by [Rufus][Rufus Download]. I found the default bios password for the thin client from [this website][Wyze Zx0 Bios Password] and enabled boot from usb in the bios.
+
 [spec sheet]:https://icecat.biz/en/p/dell+wyse/909740-52l/thin+clients-z90d7-18038133.html
+
+[Wyze Zx0 Bios Password]:https://www.reddingitpro.com/2012/05/08/default-wyse-bios-password/
+
+[Ubuntu Server Iso Download]:https://ubuntu.com/download/server
+
+[Rufus Download]:https://rufus.ie/
