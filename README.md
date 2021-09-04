@@ -28,6 +28,6 @@ I don't expect many (if any) people to read this. However, I plan to use this to
 If anyone does read this and is having any issues I'd be more than happy to help if I can. It'll help me improve my understanding of linux as well as I get to help someone else. As they say "kill two birds with one stone".
 
 ## Sections
-- [Experience with new PinePhone](PinePhone/README.md)
-- [Issued dealing with my Arch Install](Arch_Install/README.md)
-- [My Home Lab Progress](Home_Lab/README.md)
+- [PinePhone](PinePhone/README.md)
+- [Arch Install](Arch_Install/README.md)
+- [Information on my Home Lab](Home_Lab/README.md)
