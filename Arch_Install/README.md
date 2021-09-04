@@ -4,7 +4,7 @@
 
 This section covers issues/projects that concern my Arch Linux Install, as well as interesting things I read/hear about linux in general.
 
-## Articles in this section
+## Articles
 
 - [Installing Arch](InstallingArch.md)
 - [Dual Booting Windows 10](DualBootingWindows10.md)
