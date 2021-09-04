@@ -29,6 +29,5 @@ If anyone does read this and is having any issues I'd be more than happy to help
 
 ## Sections
 - [Experience with new PinePhone](PinePhone/README.md)
-- [Linux Problems/Thoughts](Linux/README.md)
-- [Issued dealing with my Arch Install](README.md)
+- [Issued dealing with my Arch Install](Arch_Install/README.md)
 - [My Home Lab Progress](Home_Lab/README.md)
