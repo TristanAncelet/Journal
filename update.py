@@ -20,9 +20,15 @@ def make_readme_article_name(filename):
 def articles_in_directory(directory):
     files = list()
     for file in os.listdir(directory):
-        if is_markdown_file(file) and file := "README.md":
+        if is_markdown_file(file) and file != "README.md":
             files.append(file)
 
+def get_section_dirs():
+    dirs = list()
+    for dir in os.listdir():
+        if dir not in [".git"] and os.path.isdir(dir):
+            dirs.append(dir)
+    return dirs
 
 def readme_matches_directory_contents(directory):
     return True if (articles_in_readme(os.path.join(directory, 'README.md')) == os.listdir(directory)) else False
@@ -30,18 +36,17 @@ def readme_matches_directory_contents(directory):
 
 def update_readme_contents(directory):
     readme_path = os.path.join(directory,"README.md")
-    files_difference = list(set(articles_in_directory(directory))-set(articles_in_readme(readme_path)))
-    if len(files_difference) == 0:
+    if readme_matches_directory_contents(directory):
         logging.debug("update_readme_contents : {} : there were no differences between directory and file".format(readme_path))
     else:
         with open(readme_path, 'a') as file:
+            files_difference = list(set(articles_in_directory(directory))-set(articles_in_readme(readme_path)))
             for item in files_difference:
                 file.write(f"- [{make_readme_article_name(item)}]({item})")
+            file.close()
 
 
-
-
-for directory in os.listdir(): 
-    if os.path.isdir(directory):
-        readme
+if __name__ == "__main__":
+    for directory in get_section_dirs():
+        update_readme_contents(directory)
         
