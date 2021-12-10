@@ -5,8 +5,9 @@ import re
 def articles_in_readme(readme_path):
     article_finder = re.compile(r'- \[\S+\]\((\S+)].md\)')
     with open(readme_path, 'r', encoding="UTF-8") as file:
-        return article_finder.findall(file.read())
+        content = file.read()
         file.close()
+    return article_finder.findall(content)
 
 
 def is_markdown_file(filename):
@@ -22,6 +23,7 @@ def articles_in_directory(directory):
     for file in os.listdir(directory):
         if is_markdown_file(file) and file != "README.md":
             files.append(file)
+    return files
 
 def get_section_dirs():
     dirs = list()
@@ -31,9 +33,10 @@ def get_section_dirs():
     return dirs
 
 def readme_matches_directory_contents(directory):
-    return True if (articles_in_readme(os.path.join(directory, 'README.md')) == os.listdir(directory)) else False
+    return True if (articles_in_readme(os.path.join(directory, 'README.md')) == articles_in_directory(directory)) else False
 
 
+#This updates the Article section of the each README.md
 def update_readme_contents(directory):
     readme_path = os.path.join(directory,"README.md")
     if readme_matches_directory_contents(directory):
