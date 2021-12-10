@@ -1,6 +1,6 @@
-# Arch Journey
+# Journal
 
-This repository is one that I made to document any issues that I've encountered while using the Arch distro.
+This repository is one that I made to document any issues and projects including Linux, Windows and MacOS.
 
 | Contact Info |                          |
 |:------------:|--------------------------|
