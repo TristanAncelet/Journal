@@ -1,6 +1,6 @@
 # SonicWall Hardware Firewall
 
-![SonicWall TZ 200](SONICWALL-TZ-200.jpg)
+![SonicWall TZ 200](images/SONICWALL-TZ-200.jpg)
 
 ---
 

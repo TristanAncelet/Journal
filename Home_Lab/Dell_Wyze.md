@@ -1,6 +1,6 @@
 # Dell Wyze
 
-![Dell Wyze](dell_wyze.jpg)
+![Dell Wyze](images/dell_wyze.jpg)
 
 ## Specs
 
