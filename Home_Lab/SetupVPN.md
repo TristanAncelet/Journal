@@ -1,9 +1,10 @@
 # Setting up a VPN
 
+
 | Details               |                                                   |
 |-----------------------|---------------------------------------------------|
-|  Machine Used         | [Dell Wyze][Dell Wyze File]           |
-|  VPN Service Used     | [OpenVPN][OpenVPN Download] |
+|  Machine Used         | [IBM System x3650 M4][server file]           |
+|  VPN Service Used     | [OpenVPN Access Server][OpenVPN Download] |
 
 
 ## Steps
@@ -12,7 +13,7 @@
 
 2) Followed the [instructions][configuration page] on getting it installed and on how to finish the initial setup.
 
-3) Opened OpenVPN operating ports of 443, 1194 on my routers NAT.
+3) Opened OpenVPN operating ports of 443, 1194 on my routers NAT
 
 4) Opened the OpenVPN management console, and changed the hostname to my external ip address to allow for external clients to connect.
 
@@ -24,5 +25,5 @@ Once I have a windows server I plan to find out how to implement LDAP authorizat
 
 
 [OpenVPN Download]: https://openvpn.net/download-open-vpn/
-[Dell Wyze File]: Dell_Wyze.md
+[server file]: Hardware/IBM_System_x3650_M4.md
 [configuration page]: https://openvpn.net/vpn-server-resources/finishing-configuration-of-access-server/
